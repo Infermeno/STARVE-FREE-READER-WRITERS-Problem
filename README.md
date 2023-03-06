@@ -1,7 +1,7 @@
 # STARVE-FREE-READER-WRITERS-Problem
 In a classical reader-writer problem critical section can be arrived by any number of readers but not alongwith any writer. Also no more than one writer is allowed to access the critical section.
 
-I've described the traditional solution first, then the starvation-free alternative.
+I have described the classical solution first and then the starvation free approach.
 
 ### Classical approach
 
@@ -15,7 +15,7 @@ int count=0;
 ```
 
 ### Reader
-Following is the code for reader in classical solution.
+Reader code for classical solution is as follows:
 
 ```cpp
 wait(mutex);
@@ -32,7 +32,7 @@ signal(mutex);
 ```
 
 ### Writer
-Following is the code for writer in classical solution.
+Writer code for classical solution is as follows:
 
 ```cpp
 wait(wrt_mutex);
@@ -47,7 +47,7 @@ Here `mutex` ensures the mutual exclusion readers while accessing the readcount+
 ## Starve-Free Solution
 
 In addition to the `mutex` and `wrt_mutex` semaphore,i have used a third binary semaphore `in_mutex` for starvation free approach.
-The following is the code for starve free approach.
+The starve free approach is as follows:
 ```cpp
 //initialization
 mutex=1;
@@ -57,7 +57,7 @@ count=0;
 ```
 
 ### Reader
-The following is the implementation of the reader code using the starve-free approach.
+Reader code for starvation free approach is as follows:
 
 ```cpp
 wait(in_mutex);
@@ -76,7 +76,7 @@ signal(mutex);
 ```
 
 ### Writer
-The following is the implementation of the reader code using the starve-free approach.
+The writer code for starvation free approach is as follows:
 
 ```cpp
 wait(in_mutex);
