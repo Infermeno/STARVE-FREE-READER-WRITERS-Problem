@@ -53,7 +53,7 @@ The starve free approach is as follows:
 mutex=1;
 wrt_mutex=1;
 in_mutex=1;
-count=0;
+int count=0;
 ```
 
 ### Reader
